@@ -19,7 +19,8 @@ while(true)
      else
      {
          Console.Clear();
-         
+         Console.WriteLine("Erro");
+
      }
 
 }
