@@ -7,6 +7,8 @@ while(true)
      if (num == "1")
      {
          Console.Clear();
+         Console.WriteLine("Digite seu login e senha, separados por enter.");
+         
      }
      else if (num == "2")
      {
@@ -18,9 +20,7 @@ while(true)
      }
      else
      {
-         Console.Clear();
-         Console.WriteLine("Erro");
-
+         Console.WriteLine("Erro, tente novamente");
      }
 
 }
