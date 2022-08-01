@@ -1,10 +1,20 @@
 ﻿using SenaiWeb.Model;
 
-Usuario usuario = new Usuario();
-usuario.Nome = "Rogerinho Fumaça";
-usuario.Senha = "senhaforte";
+while(true)
+{
+    Console.WriteLine("O que deseja fazer? 1 - Logar" + "2 - Registrar ou 3 - Sair");
+     string num = Console.ReadLine();
+     if (num == "1")
+     {
+         Console.Clear();
+     }
+     else if (num == "2")
+     {
+         Console.Clear();
+     }
+     else if (num == "3")
+     {
+         break;
+     }
 
-ExemploSenaiContext context = new ExemploSenaiContext();
-context.Add(usuario);
-context.SaveChanges();
-
+}
