@@ -16,5 +16,10 @@ while(true)
      {
          break;
      }
+     else
+     {
+         Console.Clear();
+         
+     }
 
 }
