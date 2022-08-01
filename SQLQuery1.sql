@@ -24,3 +24,5 @@ create table Post(
 	Conteudo varchar(MAX) not null,
 	Momento datetime not null
 );
+
+select * from Usuario
