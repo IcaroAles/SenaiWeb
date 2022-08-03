@@ -16,14 +16,14 @@ namespace SenaiWeb.Model
         {
         }
 
-        public virtual DbSet<Post> Posts { get; set; } = null!;
-        public virtual DbSet<Usuario> Usuarios { get; set; } = null!;
+        public virtual DbSet<Post> Posts { get; set; }
+        public virtual DbSet<Usuario> Usuarios { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=SNCCH03LABF324\\TEW_SQLEXPRESS;Initial Catalog=ExemploSenai;Integrated Security=True");
+                optionsBuilder.UseSqlServer("Data Source=SNCCHLAB02F10\\TEW_SQLEXPRESS;Initial Catalog=ExemploSenai;Integrated Security=True");
             }
         }
 
@@ -35,7 +35,9 @@ namespace SenaiWeb.Model
 
                 entity.Property(e => e.Id).HasColumnName("ID");
 
-                entity.Property(e => e.Conteudo).IsUnicode(false);
+                entity.Property(e => e.Conteudo)
+                    .IsRequired()
+                    .IsUnicode(false);
 
                 entity.Property(e => e.Momento).HasColumnType("datetime");
 
@@ -52,11 +54,13 @@ namespace SenaiWeb.Model
                 entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.Nome)
+                    .IsRequired()
                     .HasMaxLength(200)
                     .IsUnicode(false)
                     .HasColumnName("nome");
 
                 entity.Property(e => e.Senha)
+                    .IsRequired()
                     .HasMaxLength(1000)
                     .IsUnicode(false);
             });
